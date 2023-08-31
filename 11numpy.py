@@ -27,3 +27,7 @@ print(np.zeros(5))
 print()
 a = np.array([0, 0, 0, 7, 8, 1, 0, 0, 0, 9.6, 0, 0, 0, 0, 0])
 print(np.trim_zeros(a))
+
+print(np.trim_zeros(a, trim='f'))
+print(np.trim_zeros(a, trim='b'))
+# 숫자도 자르는 것이 가능하다 .
