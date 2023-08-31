@@ -22,3 +22,8 @@ print(np.concatenate([a, b], axis=1))
 a = np.array([1, 2, 3, 4, 5, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12])
 print(a)
 print(np.unique(a))
+
+print(np.zeros(5))
+print()
+a = np.array([0, 0, 0, 7, 8, 1, 0, 0, 0, 9.6, 0, 0, 0, 0, 0])
+print(np.trim_zeros(a))
