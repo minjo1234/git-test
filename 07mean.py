@@ -18,3 +18,12 @@ for i in range(len(jumsu)):
 
 print(average)
 print(hap)
+
+data = np.array(jumsu)
+print('총점', data.sum())
+print('평균', data.mean())
+# mean으로 평균을 구할 수있다 .
+
+print()
+print()
+print()
