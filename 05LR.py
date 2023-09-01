@@ -14,3 +14,15 @@ print(np.average(x))
 
 print(np.sum(y))
 print(np.average(x))
+
+print('시간총점' , np.sum(x) , '시간의 평균' , np.mean(x))  
+print('점수총점', np.sum(y), '점수평균', np.mean(y))
+print()
+
+result = 0 
+# 공부한 시간 6시간 - 본인이 공부한시간 차이후 공부한시간차이 합계 
+for k in x:
+    print(k, end='')
+    result =  k - np.mean(x)
+    print('평균과의 시간차' , result)
+
