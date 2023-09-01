@@ -26,3 +26,4 @@ for k in x:
     result =  k - np.mean(x)
     print('평균과의 시간차' , result)
 
+print()

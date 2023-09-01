@@ -30,3 +30,4 @@ print(np.random.permutation(10)) #permutation=shuffle+arange()
 
 
 
+# numpy를 파일로 다운받아서도 사용할 수 있다 . 

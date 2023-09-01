@@ -16,3 +16,4 @@ print(x)
 np.random.shuffle(x)
 # 섞음 
 print(x)
+
