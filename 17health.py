@@ -26,9 +26,14 @@ data = health[health['WEIGHT'] == 60].index
 print('결과값 = ', data)
 print(data)
 
-remove = health = health.drop(data)
+remove = health.drop(data)
 health.reset_index(drop=True, inplace=True)
 print(health)
 health.dropna(inplace=True)
 print(health)
 # remove = health.drop(data)
+
+
+fname = './data/health.csv'
+remove.to_csv(fname)
+print(fname, '파일 저장했습니다 .')
