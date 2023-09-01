@@ -29,7 +29,20 @@ print(score)
 print()
 
 # print(score)
-kor = score.keywords()
 kor = score['eng']
 kor = score['kor']
+print()
+
+
+kor = score.kor
+eng = score['eng']
+mat = score.mat
+hap = kor + eng + mat
+avg = round(hap/3, 2)
+score.insert(5, ['hap'], hap, True)
+score.insert(6, ['avg'], avg, True)
+# 임시적으로 넣을 수 있다 .
+print(score)
+
+
 print()
