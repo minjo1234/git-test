@@ -31,3 +31,5 @@ print(data)
 
 print(data)
 print(data.shape)
+print(data.ndim)
+print(data)
