@@ -35,5 +35,16 @@ print(health)
 
 
 fname = './data/health.csv'
+# 경로입력후에 지원진걸  to_csv로 반영한다 .
 remove.to_csv(fname)
 print(fname, '파일 저장했습니다 .')
+
+print(health.tail())
+data = health[health['WEIGHT'] == 50].index
+remove = health.drop(data)
+print(health)
+print(remove)
+
+remove.to_csv(fname, index=False)
+print()
+print('-'*70)
