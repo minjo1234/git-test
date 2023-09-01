@@ -6,4 +6,7 @@ option = Options()
 service = Service()
 driver = webdriver.Chrome(service=service, options=option)
 
-driver.get("https://www.naver.com/")
+try:
+    driver.get('http://www.naver.com/')
+except Exception as e:
+    driver.get('https://www.google.com/')
