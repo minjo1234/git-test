@@ -4,6 +4,8 @@ from selenium import webdriver  # selenium 패키지에서 webdriver 모듈을 �
 from selenium.webdriver.common.by import By
 from webdriver_manager.chrome import ChromeDriverManager
 # 웹 드라이버를 자동으로 다운로드 및 설치하는 데 사용되는 ChromeDriverManager 클래스를 가져옵니다.
+import pandas as pd
+
 
 options = webdriver.ChromeOptions()
 # : Chrome 웹 브라우저의 옵션을 설정하기 위해 ChromeOptions 객체를 생성합니다.
@@ -24,10 +26,11 @@ try:
         by=By.CLASS_NAME, value='u_cbox_comment_box')
     print(type(comments))
 
-    #03naverweb.py문서 result리스트, pathcsv변수에 ~~.csv
+    # 03naverweb.py문서 result리스트, pathcsv변수에 ~~.csv
 
     result = []
     path = './data/navercm.txt'
+    pathcsv = './data/navercm.csv'
     cmFile = open(path, mode='w', encoding='utf-8')
     for i in range(len(comments)):
         u_nick = comments[i].find_element(
@@ -40,7 +43,16 @@ try:
             By.CLASS_NAME, value='u_cbox_date').text
         print('닉네임:{} 댓글:{} 추천수:{} 날짜:{}'.format(
             u_nick, u_content, u_recomm, u_date))
-    print(file_contents)
+
+        result.append([u_nick, u_content, u_recomm, u_date])
+        n_table = pd.DataFrame(result, columns=(
+            'nick', 'content', 'recomm', 'date'))
+        n_talbe_to_csv = n_table.to_csv(
+            pathcsv, index=True, encoding='utf-8', mode='w')
+
+    print('03naverweb.py ',  path + '파일 text 저장성공')
+    print('03naverweb.py ', pathcsv + '파일 엑셀csv 저장성공')
+    cmFile.close()
 except Exception as ex:
     print('에러이유', ex)
 
