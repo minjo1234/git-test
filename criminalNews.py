@@ -14,6 +14,9 @@ driver.get('https://search.jtbc.co.kr/search/news?term=%EB%B2%94%EC%A3%84&type=v
 
 urls = []
 
+# url의 정보를 가져온다
+# url의 정보를 가져오고 그 url의 정보를 href로 환산한다  .
+
 
 def get_url():
     url_list = []
@@ -45,5 +48,5 @@ df = pd.DataFrame(text_list, columns=['text'])
 df.to_csv('crawlingcrime.csv',  encoding='utf-8-sig')
 
 
-# 
-# 
+#
+#
