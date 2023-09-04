@@ -40,6 +40,11 @@ try:
             u_nick, u_content, u_recomm, u_date))
         cmFile.write('닉네임:{} 댓글:{} 추천수:{} 날짜:{}\n'.format(
             u_nick, u_content, u_recomm, u_date))
+    print('----------------------------')
+    with open(path, mode='r', encoding='utf-8') as cmFile:
+        file_contents = cmFile.read()
+    print("파일 내용:")
+    print(file_contents)
 except Exception as ex:
     print('에러이유', ex)
 
