@@ -1,3 +1,6 @@
+from webdriver_manager.chrome import ChromeDriverManager
+from selenium.webdriver.common.by import By
+import time
 from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
 
@@ -14,7 +17,8 @@ try:
     driver.get("https://www.naver.com")
 
     # 네이버 메뉴에서 '식품' 클릭
-    driver.find_element('xpath', '//*[@id="shortcutArea"]/ul/li[4]/a').click()
+    driver.find_element(
+        'xpath', '//*[@id="query"]').click()
 
     # 가을 제철 식품 페이지로 이동
     driver.find_element(
@@ -34,3 +38,6 @@ except Exception as e:
 finally:
     # WebDriver 종료
     driver.quit()
+
+options = webdriver.ChromeOptions()
+options.add_experimental_option("excludeSwitches", ["enable-logging"])
