@@ -10,7 +10,7 @@ new = pd.read_csv('crawlingcrime.csv')
 
 nouns_list = []
 
-for item in new['text'][:150]:
+for item in new['text'][:50]:
     sentence_list = kkma.sentences(item)
 
     for sentence in sentence_list:
@@ -31,3 +31,5 @@ print(array.shape)
 fig = plt.figure(figsize=(80, 80))
 plt.imshow(array, interpolation="bilinear")
 plt.show()
+
+# matplotlib.pyplot.imshow(array, interpolation="bilinear")

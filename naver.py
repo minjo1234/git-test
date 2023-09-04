@@ -24,6 +24,8 @@ try:
         by=By.CLASS_NAME, value='u_cbox_comment_box')
     print(type(comments))
 
+    #03naverweb.py문서 result리스트, pathcsv변수에 ~~.csv
+
     result = []
     path = './data/navercm.txt'
     cmFile = open(path, mode='w', encoding='utf-8')
@@ -38,12 +40,6 @@ try:
             By.CLASS_NAME, value='u_cbox_date').text
         print('닉네임:{} 댓글:{} 추천수:{} 날짜:{}'.format(
             u_nick, u_content, u_recomm, u_date))
-        cmFile.write('닉네임:{} 댓글:{} 추천수:{} 날짜:{}\n'.format(
-            u_nick, u_content, u_recomm, u_date))
-    print('----------------------------')
-    with open(path, mode='r', encoding='utf-8') as cmFile:
-        file_contents = cmFile.read()
-    print("파일 내용:")
     print(file_contents)
 except Exception as ex:
     print('에러이유', ex)
