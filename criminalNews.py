@@ -4,7 +4,7 @@ from bs4 import BeautifulSoup
 from selenium import webdriver  # 웹 브라우저 식별
 from selenium.webdriver.common.by import By  # 웹 요소 식별
 from webdriver_manager.chrome import ChromeDriverManager  # 크롬브라우저 자동설치
-imp
+
 
 options = webdriver.ChromeOptions()  # 옵션
 options.add_experimental_option("excludeSwitches", ["enable-logging"])  # 로깅

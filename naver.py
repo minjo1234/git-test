@@ -76,6 +76,10 @@ try:
     with open(pathjson, 'w', encoding='utf-8') as w:
         json.dump(result_list, w, indent=4, ensure_ascii=False)
 
+    with open(pathjson, 'r', encoding='utf-8') as r:
+        data = json.load(r)
+
+    print('json읽어오기', data)
     print('03naverweb.py ',  path + '파일 text 저장성공')
     print('03naverweb.py ', pathcsv + '파일 엑셀csv 저장성공')
     cmFile.close()
