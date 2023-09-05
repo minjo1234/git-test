@@ -21,3 +21,6 @@ print('제곱근 sqrt' , math.pow(data,0.5))
 
 print() 
 print('-' * 70)
+
+print()
+print('제���� sqrt', math.sqrt(25))
